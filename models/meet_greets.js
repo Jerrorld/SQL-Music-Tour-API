@@ -7,18 +7,14 @@ module.exports = (sequelize, DataTypes) => {
 
   class MeetGreet extends Model {
 
-    static associate({ Band, Event, Stage }) {
-      SetTime.belongsTo(Band, {
+    static associate({ Band, Event }) {
+      MeetGreet.belongsTo(Band, {
         foreignKey: "band_id",
         as: "band"
       })
-      SetTime.belongsTo(Event, {
+      MeetGreet.belongsTo(Event, {
         foreignKey: "event_id",
         as: "event"
-      })
-      SetTime.belongsTo(Stage, {
-        foreignKey: "stage_id",
-        as: "stage"
       })
     }
   };
